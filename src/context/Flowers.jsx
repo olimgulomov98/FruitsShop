@@ -11,6 +11,8 @@ const FlowersContext = ({children}) => {
         // data: localStorage.getItem('flowers') ? JSON.parse(localStorage.getItem('flowers')) : data,
         data: data,
         products: [],
+        likedProducts: [],
+        savedProducts: [],
         // products: localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [],
         basket: false
     })

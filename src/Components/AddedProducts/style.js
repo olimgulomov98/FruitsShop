@@ -55,13 +55,11 @@ Container.Title = styled.h4`
     margin-top: 10px;
     font-size: 24px;
     text-align: center;
+    color: #46A358;
 `
 
 const Product = styled.div`
     width: 100%;
-    /* display: flex;
-    align-items: center;
-    background: #999999; */
     min-height: 300px;
     height: 100%;
 `

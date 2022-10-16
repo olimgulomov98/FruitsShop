@@ -5,6 +5,8 @@ import { Products } from '../Components/Products'
 import { Container } from './style'
 import { FlowerContext } from '../context/Flowers'
 import {AddedProducts} from '../Components/AddedProducts'
+import { LikedProducts } from '../Components/LikedProducts'
+import { SavedProducts } from '../Components/SavedProducts'
  
 export const Root = () => {
   const [state, dispatch] = useContext(FlowerContext)
@@ -14,7 +16,12 @@ export const Root = () => {
         <Navbar />
         {
                 state.basket ? (
+                  <div>
                     <AddedProducts />
+                    <LikedProducts />
+                    <SavedProducts />
+                  </div>
+                    
                 ) : 
                 (
                     <Products />

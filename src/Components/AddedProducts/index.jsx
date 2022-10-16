@@ -26,46 +26,48 @@ export const AddedProducts = () => {
                                 </Product.Thead>
                                 <Product.Tbody>
                                 {   
-                                    state.products.map((value) => {
-                                        totalPrice += value.quantity * value.price 
-                            
-                                        return(
-                                            <Product.Tr  key={value.id}>
-                                                <Product.Td>
-                                                    <Product.ImageWrapper>
-                                                        <Product.Img src={value.img} />
-                                                    </Product.ImageWrapper>
-                                                </Product.Td>
-                                                <Product.Td>
-                                                    <Product.Title>{value.title}</Product.Title>
-                                                </Product.Td>
-                                                <Product.Td>
-                                                    <Product.Price>${
-                                                        value.discount === null ? value.price : value.price - (value.discount / 100 * value.price)
-                                                    }</Product.Price>
-                                                </Product.Td>
-                                                <Product.Td>
-                                                    <Product.Quantity>
-                                                        <Product.IconWrapper onClick={() => dispatch({type: 'minus', payload: {id: value.id}})}>
-                                                            <Product.Minus />
-                                                        </Product.IconWrapper>
-                                                        <Product.Quantity>{value.quantity}</Product.Quantity>
-                                                        <Product.IconWrapper onClick={() => dispatch({type: 'plus', payload: {id: value.id}})}>
-                                                            <Product.Plus />
-                                                        </Product.IconWrapper>
-                                                    </Product.Quantity>
-                                                </Product.Td>
-                                                <Product.Td>
-                                                    <Product.Total>${value.price * value.quantity}</Product.Total>
-                                                </Product.Td>
-                                                <Product.Td>
-                                                    <Product.TrashContainer>
-                                                        <Product.Trash onClick={() => dispatch({type: 'delete', payload: {userId: value.id}})}/>
-                                                    </Product.TrashContainer>
-                                                </Product.Td>
-                                            </Product.Tr>
-                                     )
-                                    })
+                                    state.products.length ? (
+                                        state.products.map((value) => {
+                                            totalPrice += value.quantity * value.price 
+                                
+                                            return(
+                                                <Product.Tr  key={value.id}>
+                                                    <Product.Td>
+                                                        <Product.ImageWrapper>
+                                                            <Product.Img src={value.img} />
+                                                        </Product.ImageWrapper>
+                                                    </Product.Td>
+                                                    <Product.Td>
+                                                        <Product.Title>{value.title}</Product.Title>
+                                                    </Product.Td>
+                                                    <Product.Td>
+                                                        <Product.Price>${
+                                                            value.discount === null ? value.price : value.price - (value.discount / 100 * value.price)
+                                                        }</Product.Price>
+                                                    </Product.Td>
+                                                    <Product.Td>
+                                                        <Product.Quantity>
+                                                            <Product.IconWrapper onClick={() => dispatch({type: 'minus', payload: {id: value.id}})}>
+                                                                <Product.Minus />
+                                                            </Product.IconWrapper>
+                                                            <Product.Quantity>{value.quantity}</Product.Quantity>
+                                                            <Product.IconWrapper onClick={() => dispatch({type: 'plus', payload: {id: value.id}})}>
+                                                                <Product.Plus />
+                                                            </Product.IconWrapper>
+                                                        </Product.Quantity>
+                                                    </Product.Td>
+                                                    <Product.Td>
+                                                        <Product.Total>${value.price * value.quantity}</Product.Total>
+                                                    </Product.Td>
+                                                    <Product.Td>
+                                                        <Product.TrashContainer>
+                                                            <Product.Trash onClick={() => dispatch({type: 'delete', payload: {userId: value.id}})}/>
+                                                        </Product.TrashContainer>
+                                                    </Product.Td>
+                                                </Product.Tr>
+                                         )
+                                        })
+                                    ) : <h4>No Data</h4>    
                                 }
                                 </Product.Tbody>
                             </Product.Table>
@@ -73,7 +75,7 @@ export const AddedProducts = () => {
                         </Product>
                    
             <Product.TotalPrice>Total: ${totalPrice}</Product.TotalPrice>
-            <Product.Buy>Buy</Product.Buy>
+            <Product.Buy onClick={() => dispatch({type: 'buy'})}>Buy</Product.Buy>
         </Container.Wrapper>
     </Container>
   )

@@ -6,7 +6,7 @@ import {ReactComponent as bookmarkblack} from '../../assets/icons/bookmark-true.
 
 const Container = styled.div`
     width: 100%;
-    margin: 30px 0px 100px 0px;
+    margin: 30px 0px 30px 0px;
     padding: 0px 130px;
     min-height: calc(100vh - 80px);
 
@@ -48,7 +48,7 @@ const Title = styled.h2`
 const Wrapper = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 40px;
     box-sizing: border-box;
     @media (max-width: 1600px) {
@@ -56,16 +56,16 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 1300px) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 25px;
     }
 
     @media (max-width: 1000px) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 35px;
     }
     @media (max-width: 700px) {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 35px;
     }
 `
@@ -83,40 +83,10 @@ const Card = styled.div`
     }
 `
 
-Card.HeartIconWrapper = styled.div`
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-Card.Heart = styled(heart)`
-    width: 20px;
-    height: 20px;
-`
-
-Card.HeartRed = styled(heartred)`
-    width: 24px;
-    height: 24px;
-`
-
-Card.BookmarkWhite = styled(bookmarkwhite)`
-    width: 25px;
-    height: 25px;
-`
-
-Card.BookmarkBlack = styled(bookmarkblack)`
-    width: 25px;
-    height: 25px;
-`
 
 Card.ImageWrapper = styled.div`
     width: 100%;
-    height: 300px;
+    height: 120px;
     overflow: hidden;
     background: #777;
 `
@@ -130,12 +100,12 @@ Card.Title = styled.h4`
     padding: 0;
     margin: 0;
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 18px;
 `
 
 Card.Price = styled.h5`
     padding: 0;
-    font-size: 20px;
+    font-size: 14px;
     margin: 10px 0px;
     color: #46A358;
     font-weight: 700;
@@ -151,30 +121,10 @@ Card.PriceWrapper = styled.div`
 Card.OriginalPrice = styled.div`
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 16px;
     color: #A5A5A5;
     text-decoration: line-through;
-`
-
-Card.Button = styled.button`
-    width: 100%;
-    height: 40px;
-    background: #46A358;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    border: none;
-    font-weight: 700;
-    transition: transform .3s ease-in-out;
-    border-radius: 10px;
-
-    :active {
-        background: #fff;
-        color:#111;
-    }
 `
 
 Card.Discount = styled.div`
@@ -184,14 +134,13 @@ Card.Discount = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transform: translateX(-50%); */
-    width: 80px;
-    height: 29px;
+    width: 50px;
+    height: 15px;
     background: #46A358;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 10px;
+    line-height: 10px;
     color: #FFFFFF;
 `
 

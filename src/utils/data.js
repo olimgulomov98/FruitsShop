@@ -5,16 +5,15 @@ import img4 from '../assets/images/image4.png'
 import img5 from '../assets/images/image5.png'
 import img6 from '../assets/images/image6.png'
 import img7 from '../assets/images/image7.png'
-import img8 from '../assets/images/image8.png'
-import img9 from '../assets/images/image9.png'
+import img8 from '../assets/images/image8.jpg'
+import img9 from '../assets/images/image9.jpg'
 import img10 from '../assets/images/image11.jpg'
 import img11 from '../assets/images/image12.jpg'
 import img12 from '../assets/images/image13.jpg'
 import img13 from '../assets/images/image14.jpg'
 import img14 from '../assets/images/image15.jpg'
 import img15 from '../assets/images/image16.jpg'
-import img16 from '../assets/images/image17.jpg'
-import img17 from '../assets/images/image18.jpg'
+import img16 from '../assets/images/image18.jpg'
 
 export const data = [
     {
@@ -24,6 +23,7 @@ export const data = [
         price: 20,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: 13,
@@ -35,6 +35,7 @@ export const data = [
         price: 20,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -46,6 +47,7 @@ export const data = [
         price: 40,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: 15
@@ -57,6 +59,7 @@ export const data = [
         price: 10,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -68,6 +71,7 @@ export const data = [
         price: 25,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -79,6 +83,7 @@ export const data = [
         price: 35,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: 22,    
@@ -90,6 +95,7 @@ export const data = [
         price: 40,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -101,6 +107,7 @@ export const data = [
         price: 35,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,
@@ -112,6 +119,7 @@ export const data = [
         price: 43,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -123,6 +131,7 @@ export const data = [
         price: 45,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: 30,    
@@ -135,6 +144,7 @@ export const data = [
         price: 55,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -146,6 +156,7 @@ export const data = [
         price: 23,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -157,6 +168,7 @@ export const data = [
         price: 6,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
@@ -168,6 +180,7 @@ export const data = [
         price: 15,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: 18,    
@@ -179,17 +192,19 @@ export const data = [
         price: 16,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
     },
     {
         id: 16,
-        img: img17,
+        img: img16,
         title: 'Flower 16',
         price: 15,
         quantity: 0,
         like: false,
+        save: false,
         addtocart: false,
         sold: false,
         discount: null,    
