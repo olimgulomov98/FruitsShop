@@ -7,67 +7,12 @@ import {ReactComponent as bookmarkblack} from '../../assets/icons/bookmark-true.
 const Container = styled.div`
     width: 100%;
     margin: 30px 0px 30px 0px;
-    padding: 0px 130px;
-    min-height: calc(100vh - 80px);
-
-    @media (max-width: 1600px) {
-        padding: 0px 80px;
-    }
-
-    @media (max-width: 1500px) {
-        padding: 0px 50px;
-    }
-
-    @media (max-width: 1000px) {
-        padding: 0px 70px;
-    }
-    @media (max-width: 700px) {
-        padding: 0px 130px;
-    }
-
-    @media (max-width: 600px) {
-        padding: 0px 80px;
-    }
-    @media (max-width: 500px) {
-        padding: 0px 50px;
-    }
-    @media (max-width: 400px) {
-        padding: 0px 30px;
-    }
-    @media (max-width: 330px) {
-        padding: 0px 20px;
-    }
 `
 
 const Title = styled.h2`
     text-align: center;
     margin-bottom: 30px;
     color: #46A358;
-`
-
-const Wrapper = styled.div`
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 40px;
-    box-sizing: border-box;
-    @media (max-width: 1600px) {
-        grid-gap: 30px;
-    }
-
-    @media (max-width: 1300px) {
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 25px;
-    }
-
-    @media (max-width: 1000px) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 35px;
-    }
-    @media (max-width: 700px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 35px;
-    }
 `
 
 const Card = styled.div`
@@ -82,7 +27,6 @@ const Card = styled.div`
         transform: scale(0.97);
     }
 `
-
 
 Card.ImageWrapper = styled.div`
     width: 100%;
@@ -144,4 +88,4 @@ Card.Discount = styled.div`
     color: #FFFFFF;
 `
 
-export {Container, Title, Wrapper, Card}
+export {Container, Title, Card}

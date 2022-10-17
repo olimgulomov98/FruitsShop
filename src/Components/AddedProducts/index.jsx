@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FlowerContext } from '../../context/Flowers'
 import { Container, Product } from './style'
 
@@ -28,7 +28,11 @@ export const AddedProducts = () => {
                                 {   
                                     state.products.length ? (
                                         state.products.map((value) => {
-                                            totalPrice += value.quantity * value.price 
+                                            {
+                                                value.discount === null ? totalPrice += value.quantity * value.price : totalPrice += ((value.price - (value.discount / 100 * value.price)) * value.quantity)
+                                            }
+                                        
+                                             
                                 
                                             return(
                                                 <Product.Tr  key={value.id}>
@@ -57,7 +61,9 @@ export const AddedProducts = () => {
                                                         </Product.Quantity>
                                                     </Product.Td>
                                                     <Product.Td>
-                                                        <Product.Total>${value.price * value.quantity}</Product.Total>
+                                                        <Product.Total>${
+                                                            value.discount === null ? value.price * value.quantity : ((value.price - (value.discount / 100 * value.price)) * value.quantity).toFixed(2)
+                                                        }</Product.Total>
                                                     </Product.Td>
                                                     <Product.Td>
                                                         <Product.TrashContainer>
@@ -74,7 +80,7 @@ export const AddedProducts = () => {
 
                         </Product>
                    
-            <Product.TotalPrice>Total: ${totalPrice}</Product.TotalPrice>
+            <Product.TotalPrice>Total: ${totalPrice.toFixed(2)}</Product.TotalPrice>
             <Product.Buy onClick={() => dispatch({type: 'buy'})}>Buy</Product.Buy>
         </Container.Wrapper>
     </Container>

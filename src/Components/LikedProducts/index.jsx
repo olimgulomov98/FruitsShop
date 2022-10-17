@@ -1,17 +1,40 @@
 import React, { useContext } from 'react'
 import { FlowerContext } from '../../context/Flowers'
-import {Container, Title, Wrapper, Card} from './style'
+import {Container, Title, Card} from './style'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper";
 
 export const LikedProducts = () => {
     const [state, dispatch] = useContext(FlowerContext)
     
   return (
     <Container>
-        <Title>Products you liked</Title>
-        <Wrapper>
-                {
-                    state.likedProducts.map((value) => {
-                        return(
+        {
+            state.likedProducts.length > 0 ? <Title>Products you liked</Title> : <div></div>
+        }
+        
+        <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+            pagination={{
+            clickable: true,
+            }}
+            modules={[Autoplay, Pagination]}
+            className="mySwiper"
+        >
+            
+            {
+                state.likedProducts.map((value) => {
+                    return(
+                        <SwiperSlide>
+                                    
                             <Card key={value.id}>
                                 {
                                     value.discount && <Card.Discount>{value.discount}% OFF</Card.Discount>
@@ -22,21 +45,22 @@ export const LikedProducts = () => {
                                 </Card.ImageWrapper>
                                 <Card.Title>{value.title}</Card.Title>
                                 <Card.PriceWrapper>
-                                    <Card.Price>${
-                                        value.discount === null ? value.price : value.price - (value.discount / 100 * value.price)  
-                                    }</Card.Price>
-                                    {
-                                        value.discount && <Card.OriginalPrice>${value.price}</Card.OriginalPrice>
-                                    }
-                                    
+                                    <Card.Price>$
+                                        {
+                                            value.discount === null ? value.price : value.price - (value.discount / 100 * value.price)  
+                                        }
+                                    </Card.Price>
+                                        {
+                                            value.discount && <Card.OriginalPrice>${value.price}</Card.OriginalPrice>
+                                        }    
                                 </Card.PriceWrapper>
                             </Card>
-                        )
-                    
-                    })
-                }
-
-        </Wrapper>
+                        </SwiperSlide>
+                    )
+                        
+                })
+            }   
+        </Swiper>
     </Container>
   )
 }

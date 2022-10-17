@@ -16,15 +16,17 @@ export const Root = () => {
         <Navbar />
         {
                 state.basket ? (
-                  <div>
-                    <AddedProducts />
-                    <LikedProducts />
-                    <SavedProducts />
-                  </div>
                     
+                    <AddedProducts />
+   
                 ) : 
                 (
+                  <div>
+                    <LikedProducts />
+                    <SavedProducts />
                     <Products />
+                  </div>
+                    
                 )
         }
         

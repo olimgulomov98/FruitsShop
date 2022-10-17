@@ -1,3 +1,5 @@
+import { data } from "../utils/data"
+
 export const reducer = (state, action)=>{
     switch(action.type){
         case 'add': 
@@ -11,7 +13,8 @@ export const reducer = (state, action)=>{
             let cancel = state.data.filter(value => value.id === action.payload.id)
             let cancelChanged = cancel.map(value => value && {...value, addtocart: !value.addtocart})
             let newDatas = state.data.map(value => value.id === action.payload.id ? cancelChanged[0] : value)
-            return{...state, data: newDatas }
+            let cancelDel = state.products.filter((value) => value.id !== action.payload.id)
+            return{...state, products: cancelDel, data: newDatas }
 
         case 'basket': 
             return {...state, basket: !state.basket}
@@ -29,7 +32,8 @@ export const reducer = (state, action)=>{
             let heartRed = state.data.filter(value => value.id === action.payload.id)
             let heartRedChanged = heartRed.map(value => value && {...value, like: !value.like})
             let newData1 = state.data.map(value => value.id === action.payload.id ? heartRedChanged[0] : value)
-            return {...state, data: newData1}
+            let heartDel = state.likedProducts.filter((value) => value.id !== action.payload.id)
+            return {...state, likedProducts: heartDel, data: newData1}
 
         case 'save':
             let save = state.data.filter(value => value.id === action.payload.id)
@@ -44,11 +48,15 @@ export const reducer = (state, action)=>{
             let saveBlack = state.data.filter(value => value.id === action.payload.id)
             let saveBlackChanged = saveBlack.map(value => value && {...value, save: !value.save})
             let NewData1 = state.data.map(value => value.id === action.payload.id ? saveBlackChanged[0] : value)
-            return {...state, data: NewData1}
+            let saveDel = state.savedProducts.filter((value) => value.id !== action.payload.id)
+            return {...state, savedProducts: saveDel, data: NewData1}
 
         case 'delete':
             let resDel = state.products.filter((value) => value.id !== action.payload.userId)
-            return{...state,products: resDel}    
+            let delBack = state.products.map((value) => value.id === action.payload.userId && {...value, addtocart: false})
+            let newData0 = state.data.map(value => value.id === action.payload.userId ? delBack[0] : value)
+            console.log(newData0);
+            return{...state, products: resDel, data: newData0}    
         
         case 'plus' :
             let resPlus = state.products.map((value) => value.id === action.payload.id ? {...value, quantity: value.quantity + 1} : value)
@@ -62,7 +70,7 @@ export const reducer = (state, action)=>{
         case 'buy':
             let buy = 'no data'
             console.log(buy)
-            return{...state}    
+            return{...state, products: 'thanks'}    
 
         default: return state.data
     }
