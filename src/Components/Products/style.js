@@ -6,7 +6,7 @@ import {ReactComponent as bookmarkblack} from '../../assets/icons/bookmark-true.
 
 const Container = styled.div`
     width: 100%;
-    margin: 30px 0px 100px 0px;
+    margin: 0px 0px 100px 0px;
     padding: 0px 130px;
     min-height: calc(100vh - 80px);
 
@@ -184,7 +184,6 @@ Card.Discount = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transform: translateX(-50%); */
     width: 80px;
     height: 29px;
     background: #46A358;

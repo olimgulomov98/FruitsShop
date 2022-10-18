@@ -5,7 +5,7 @@ import {ReactComponent as minus} from '../../assets/icons/minus.svg'
 
 const Container = styled.div`
     width: 100%;
-    width: 1000px;
+    /* width: 1000px; */
     margin: auto;
     box-sizing: border-box;
     box-sizing: border-box;
@@ -47,6 +47,10 @@ Container.Wrapper = styled.div`
     gap: 20px;
     margin: auto;
     margin-top: 30px;
+    margin-bottom: 30px;
+    @media (max-width: 430px) {
+        margin-top: 10px;
+    }
 `
 
 Container.Title = styled.h4`
@@ -60,7 +64,7 @@ Container.Title = styled.h4`
 
 const Product = styled.div`
     width: 100%;
-    min-height: 300px;
+    min-height: 100px;
     height: 100%;
 `
 
@@ -69,17 +73,19 @@ Product.Table = styled.table`
 `
 
 Product.Thead = styled.thead`
-    
-    
+    height: 80px;
+    @media (max-width: 430px) {
+        height: 50px;
+    }
 `
 
 Product.Tbody = styled.tbody`
-    
-    
+    height: 80px;
+     
 `
 
 Product.Tr = styled.tr`
-height: 80px;
+
 `
 
 Product.Th = styled.th`
@@ -88,7 +94,10 @@ Product.Th = styled.th`
     font-size: 20px;
     line-height: 16px;
     color: #3D3D3D;
-
+    @media (max-width: 430px) {
+        font-size: 16px;
+        line-height: 12px;
+    }
 `
 
 
@@ -101,6 +110,10 @@ Product.ImageWrapper = styled.div`
     width: 70px;
     height: 70px;
     margin: auto;
+    @media (max-width: 430px) {
+        width: 50px;
+        height: 50px;
+    }
 `
 
 Product.Img = styled.img`
@@ -114,6 +127,10 @@ Product.Title = styled.div`
     line-height: 16px;
     color: #3D3D3D;
     text-align: center;
+    @media (max-width: 430px) {
+        font-size: 12px;
+        line-height: 8px;
+    }
 `
 
 Product.Price = styled.div`
@@ -123,6 +140,10 @@ Product.Price = styled.div`
     line-height: 16px;
     color: #727272;
     text-align: center;
+    @media (max-width: 430px) {
+        font-size: 12px;
+        line-height: 8px;
+    }
 `
 
 Product.Quantity = styled.div`
@@ -132,6 +153,10 @@ Product.Quantity = styled.div`
     line-height: 10px;
     color: #3D3D3D;
     text-align: center;
+    @media (max-width: 430px) {
+        font-size: 12px;
+        line-height: 7px;
+    }
 `
 
 Product.Total = styled.div`
@@ -141,6 +166,10 @@ Product.Total = styled.div`
     line-height: 16px;
     color: #46A358;
     text-align: center;
+    @media (max-width: 430px) {
+        font-size: 12px;
+        line-height: 8px;
+    }
 `
 Product.TrashContainer = styled.div`
     width: 100%;
@@ -151,6 +180,10 @@ Product.TrashContainer = styled.div`
 `
 Product.Trash = styled(trash)`
     margin: auto;
+    @media (max-width: 430px) {
+        width: 20px;
+        height: 20px;
+    }
     :active {
         transform: scale(0.97);
     }
@@ -161,6 +194,9 @@ Product.Quantity = styled.div`
     align-items: center;
     justify-content: center;
     gap: 16px;
+    @media (max-width: 430px) {
+        gap: 8px;
+    }
 `
 
 Product.IconWrapper = styled.div`
@@ -171,6 +207,10 @@ Product.IconWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 430px) {
+        width: 18.71px;
+        height: 20px;
+    }
 
     :active {
         transform: scale(0.97);

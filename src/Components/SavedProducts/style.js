@@ -1,8 +1,4 @@
 import styled from "styled-components";
-import {ReactComponent as heart} from '../../assets/icons/heart.svg'
-import {ReactComponent as heartred} from '../../assets/icons/heart-red.svg'
-import {ReactComponent as bookmarkwhite} from '../../assets/icons/bookmark-false.svg'
-import {ReactComponent as bookmarkblack} from '../../assets/icons/bookmark-true.svg'
 
 const Container = styled.div`
     width: 100%;
@@ -22,6 +18,10 @@ const Card = styled.div`
     border-radius: 30px;
     transition: all .3s ease-in-out;
     position: relative;
+
+    @media (max-width: 530px) {
+        padding: 10px;
+    }
   
     :hover {
         transform: scale(0.97);
@@ -33,6 +33,10 @@ Card.ImageWrapper = styled.div`
     height: 120px;
     overflow: hidden;
     background: #777;
+
+    @media (max-width: 530px) {
+        height: 80px;
+    }
 `
 
 Card.Img = styled.img`
@@ -45,6 +49,13 @@ Card.Title = styled.h4`
     margin: 0;
     margin-top: 10px;
     font-size: 18px;
+
+    @media (max-width: 530px) {
+        font-size: 14px;
+    }
+    @media (max-width: 390px) {
+        font-size: 11px;
+    }
 `
 
 Card.Price = styled.h5`
@@ -54,6 +65,9 @@ Card.Price = styled.h5`
     color: #46A358;
     font-weight: 700;
 
+    @media (max-width: 530px) {
+        font-size: 12px;
+    }
 `
 
 Card.PriceWrapper = styled.div`
@@ -69,6 +83,11 @@ Card.OriginalPrice = styled.div`
     line-height: 16px;
     color: #A5A5A5;
     text-decoration: line-through;
+
+    @media (max-width: 430px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
 `
 
 Card.Discount = styled.div`
@@ -86,6 +105,15 @@ Card.Discount = styled.div`
     font-size: 10px;
     line-height: 10px;
     color: #FFFFFF;
+
+    @media (max-width: 530px) {
+        width: 35px;
+        height: 10px;
+        font-size: 7px;
+        line-height: 8px;
+        top: 15px;
+        left: 10px;
+    }
 `
 
 export {Container, Title, Card}

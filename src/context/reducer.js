@@ -1,4 +1,3 @@
-import { data } from "../utils/data"
 
 export const reducer = (state, action)=>{
     switch(action.type){
@@ -53,10 +52,8 @@ export const reducer = (state, action)=>{
 
         case 'delete':
             let resDel = state.products.filter((value) => value.id !== action.payload.userId)
-            let delBack = state.products.map((value) => value.id === action.payload.userId && {...value, addtocart: false})
-            let newData0 = state.data.map(value => value.id === action.payload.userId ? delBack[0] : value)
-            console.log(newData0);
-            return{...state, products: resDel, data: newData0}    
+            let delBack = state.data.map((value) => value.id === action.payload.userId ? {...value, addtocart: false} : value)
+            return{...state, products: resDel, data: delBack }    
         
         case 'plus' :
             let resPlus = state.products.map((value) => value.id === action.payload.id ? {...value, quantity: value.quantity + 1} : value)
@@ -64,13 +61,7 @@ export const reducer = (state, action)=>{
 
         case 'minus' :
             let resMinus = state.products.map((value) => value.id === action.payload.id && value.quantity > 1 ? {...value, quantity: value.quantity - 1} : value)
-            console.log(resMinus);
-            return {...state, products: resMinus}
-        
-        case 'buy':
-            let buy = 'no data'
-            console.log(buy)
-            return{...state, products: 'thanks'}    
+            return {...state, products: resMinus}   
 
         default: return state.data
     }

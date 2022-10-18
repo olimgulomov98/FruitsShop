@@ -6,7 +6,6 @@ export const AddedProducts = () => {
     const [state, dispatch] = useContext(FlowerContext)
     var totalPrice = 0
     
-    // console.log(state, 'addedproduct')
   return (
     <Container>
         <Container.Title>Added Products</Container.Title>
@@ -81,7 +80,7 @@ export const AddedProducts = () => {
                         </Product>
                    
             <Product.TotalPrice>Total: ${totalPrice.toFixed(2)}</Product.TotalPrice>
-            <Product.Buy onClick={() => dispatch({type: 'buy'})}>Buy</Product.Buy>
+            <Product.Buy>Buy</Product.Buy>
         </Container.Wrapper>
     </Container>
   )
